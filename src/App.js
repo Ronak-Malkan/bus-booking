@@ -1,25 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { SeatData } from "./seatData";
+import SeatContainer from "./components/seatContainer/seatContainer";
+import { useState } from "react";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+   const [seatData, setSeatData] = useState(SeatData);
+
+   return (
+      <div className="App">
+         <h2 className="title">Bus Booking</h2>
+         <div className="bus">
+            <div className="wheel"></div>
+            <SeatContainer seatData={seatData} setSeatData={setSeatData} />
+         </div>
+      </div>
+   );
 }
 
 export default App;
