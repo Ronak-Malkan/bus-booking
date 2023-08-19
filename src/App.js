@@ -8,11 +8,16 @@ function App() {
 
    return (
       <div className="App">
-         <h2 className="title">Bus Booking</h2>
+         <h2 className="title">
+            <span style={{ color: "red" }}>Bus</span> Booking
+         </h2>
          <div className="bus">
             <div className="wheel"></div>
             <SeatContainer seatData={seatData} setSeatData={setSeatData} />
          </div>
+         <button className="bookButton">
+            <span style={{ color: "red" }}>Book</span> Now!
+         </button>
       </div>
    );
 }
