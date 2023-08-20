@@ -1,0 +1,35 @@
+.card {
+   display: inline-block;
+   position: absolute;
+   width: 30vw;
+   height: 40vh;
+   top: 30%;
+   left: 35%;
+   background-color: white;
+   border: 3px solid black;
+   border-radius: 6px;
+   z-index: 2;
+}
+
+.message {
+   text-align: center;
+   margin-top: 10vh;
+}
+
+.cardButton {
+   display: inline-block;
+   padding: 5px 10px;
+   width: 10vw;
+   margin-left: 10vw;
+   margin-top: 10vh;
+   border: 2px solid black;
+   border-radius: 6px;
+   background-color: white;
+   font-size: 20px;
+   font-weight: bold;
+}
+
+.cardButton:hover {
+   transform: scale(1.1);
+   cursor: pointer;
+}

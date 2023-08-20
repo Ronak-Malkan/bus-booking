@@ -1,14 +1,30 @@
 import "./seatContainer.css";
 
-const SeatContainer = ({ seatData, setSeatData }) => {
+const SeatContainer = ({
+   seatData,
+   setSeatData,
+   setSeatSelected,
+   setCardStatus,
+   setMessage,
+   setButtonTitle,
+}) => {
    const selectSeat = (e) => {
-      console.log(e);
+      if (seatData[parseInt(e.target.id) - 1].booked) {
+         setMessage("You cannot select already booked seat");
+         setButtonTitle("Close");
+         setCardStatus(true);
+         return;
+      }
       setSeatData((currentSeatData) => {
-         console.log(currentSeatData[parseInt(e.target.id) - 1]);
          if (currentSeatData[parseInt(e.target.id) - 1].selected)
             currentSeatData[parseInt(e.target.id) - 1].selected = false;
          else currentSeatData[parseInt(e.target.id) - 1].selected = true;
-         console.log(currentSeatData[parseInt(e.target.id) - 1]);
+
+         setSeatSelected(false);
+         currentSeatData.forEach((seat) => {
+            if (seat.selected) setSeatSelected(true);
+         });
+
          return [...currentSeatData];
       });
    };
